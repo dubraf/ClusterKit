@@ -164,6 +164,11 @@ BOOL CLLocationCoordinateEqual(CLLocationCoordinate2D coordinate1, CLLocationCoo
         return;
     }
     
+    if ([_clusters containsObject: _selectedCluster]) {
+        [_clusters removeObject:_selectedCluster];
+        [self.map selectCluster:_selectedCluster animated:animated];
+    }
+    
     MKMapRect clusterMapRect = MKMapRectWorld;
     if (self.marginFactor != kCKMarginFactorWorld) {
         clusterMapRect = MKMapRectInset(visibleMapRect,
