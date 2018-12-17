@@ -70,6 +70,10 @@ NSComparisonResult MKMapSizeCompare(MKMapSize size1, MKMapSize size2) {
     return self;
 }
 
+- (NSMutableOrderedSet<id<MKAnnotation>> *) orderedSet {
+    return _annotations;
+}
+
 - (NSArray<id<MKAnnotation>> *)annotations {
     return _annotations.array;
 }

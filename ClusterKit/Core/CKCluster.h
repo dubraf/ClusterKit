@@ -42,6 +42,7 @@ MK_EXTERN NSComparisonResult MKMapSizeCompare(MKMapSize size1, MKMapSize size2);
 
 #pragma mark - Cluster definitions
 
+
 /**
  CKCluster protocol that create a kind of CKCluster at the given coordinate.
  */
@@ -93,6 +94,8 @@ MK_EXTERN NSComparisonResult MKMapSizeCompare(MKMapSize size1, MKMapSize size2);
  Represents a rectangular bounding box on the Earth's projection.
  */
 @property (nonatomic, readonly) MKMapRect bounds;
+
+- (NSMutableOrderedSet<id<MKAnnotation>> *) orderedSet;
 
 /**
  Adds a given annotation to the cluster, if it is not already a member.
